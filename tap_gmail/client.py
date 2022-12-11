@@ -26,16 +26,6 @@ class GmailStream(RESTStream):
         return GmailAuthenticator.create_for_stream(self)
 
     @property
-    def schema(self) -> dict:
-        """Get schema.
-        We are waiting on https://gitlab.com/meltano/sdk/-/issues/299 this works
-        well until then
-        Returns:
-            JSON Schema dictionary for this stream.
-        """
-        return resolve_schema_references(self._schema)
-
-    @property
     def http_headers(self) -> dict:
         """Return the http headers needed."""
         headers = {}
