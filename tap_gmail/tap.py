@@ -34,7 +34,13 @@ class TapGmail(Tap):
             "user_id",
             th.StringType, 
             default="me",
-            description="The user's email address. The special value me can be used to indicate the authenticated user. More info [here](https://developers.google.com/gmail/api/reference/rest/v1/users/getProfile#path-parameters)"),
+            description="The user's email address. The special value me can be used to indicate the authenticated user. More info [here](https://developers.google.com/gmail/api/reference/rest/v1/users/getProfile#path-parameters)"
+        ),
+        th.Property(
+            "messages.q",
+            th.StringType,
+            description="Only return messages matching the specified query. Supports the same query format as the Gmail search box. For example, \"from:someuser@example.com rfc822msgid:<somemsgid@example.com> is:unread\". Parameter cannot be used when accessing the api using the gmail.metadata scope. https://developers.google.com/gmail/api/reference/rest/v1/users.messages/list#query-parameters",
+        ),
         th.Property(
             "messages.include_spam_trash",
             th.BooleanType,
