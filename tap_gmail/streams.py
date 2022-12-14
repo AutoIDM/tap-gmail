@@ -35,7 +35,6 @@ class MessageListStream(GmailStream):
         if messages_config is not None:
             params["includeSpamTrash"]=messages_config.get("messages.include_spam_trash")
             params["q"]=messages_config.get("q")
-        breakpoint()
         return params
 
 
