@@ -4,7 +4,6 @@ from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Union
 
 import requests
-from memoization import cached
 from singer_sdk.helpers.jsonpath import extract_jsonpath
 from singer_sdk.streams import RESTStream
 
@@ -19,7 +18,6 @@ class GmailStream(RESTStream):
     url_base = "https://gmail.googleapis.com"
 
     @property
-    @cached
     def authenticator(self) -> GmailAuthenticator:
         """Return a new authenticator object."""
         return GmailAuthenticator.create_for_stream(self)

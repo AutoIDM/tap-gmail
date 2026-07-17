@@ -10,11 +10,11 @@ keywords = [
 license = "Apache 2.0"
 
 [tool.poetry.dependencies]
-python = "<3.11,>=3.7.1"
+python = ">=3.10,<4.0"
 requests = "^2.25.1"
-singer-sdk = "^0.15.0"
+singer-sdk = ">=0.40"
 
-[tool.poetry.dev-dependencies]
+[tool.poetry.group.dev.dependencies]
 pytest = "^6.2.5"
 tox = "^3.24.4"
 flake8 = "^3.9.2"
